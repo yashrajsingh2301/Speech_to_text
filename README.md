@@ -3,13 +3,13 @@ this code helps &amp; enables to convert the speech by the user to text by insta
  
 CODE:
 
-import speech_recgonition as sr
-r = sr.Recogizer()
+import speech_recognition as sr
+r = sr.Recognizer()
 with sr.Microphone() as source:
     print("Speak:")
-    audio = sr.listen(source)
+    audio = r.listen(source)
 try :
-    note = sr.recognize_google(audio)
+    note = r.recognize_google(audio)
     print("you said:", note)
 except sr.UnknownValueError :
     print("Could not undersatnd:")
